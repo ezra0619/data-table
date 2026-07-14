@@ -1063,6 +1063,9 @@ export class DataTableComponent implements OnChanges, OnInit, OnDestroy, AfterVi
 		if (!this.showSelectionInfo) {
 			return false;
 		}
+		if (this.selectAllAcrossPagesLoading) {
+			return true;
+		}
 		if (arrayIsSetAndFilled(this.getSelectedRows())) {
 			return true;
 		}

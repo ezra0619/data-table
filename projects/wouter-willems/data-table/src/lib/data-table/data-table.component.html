@@ -26,9 +26,9 @@
 
 <div *ngIf="shouldShowSelectionSection()" class="selectionAndMultiActions">
 	<div class="selectionContainer">
-		<div>{{translate('%count% item(s) selected', {count: getSelectedRows().length})}}</div>
+		<div *ngIf="!selectAllAcrossPagesLoading">{{translate('%count% item(s) selected', {count: getSelectedRows().length})}}</div>
 		<ng-container *ngIf="shouldShowSelectAcrossAllPages()">
-			<div class="separator"></div>
+			<div *ngIf="!selectAllAcrossPagesLoading" class="separator"></div>
 			<div *ngIf="selectAllAcrossPagesLoading" class="loadingIndicator" >
 				<div class="spinner">
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
